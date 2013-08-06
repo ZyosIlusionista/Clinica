@@ -1,0 +1,20 @@
+{
+	"DEFAULT":
+	{
+		"dbname":	"Nombre Base de Datos",
+		"user":		"Usuario",
+		"password":	"password de la Base",
+		"host":		"localhost",
+		"driver":	"pdo_mysql",
+		"charset":	"iso-8859-1"
+	},
+	"CLINICA":
+	{
+		"dbname":	"clinica",
+		"user":		"root",
+		"password":	"",
+		"host":		"localhost",
+		"driver":	"pdo_mysql",
+		"charset":	"utf8"
+	}
+}

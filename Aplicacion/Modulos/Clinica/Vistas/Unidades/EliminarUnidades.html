@@ -1,0 +1,46 @@
+	
+	<div class="row-fluid">
+    	<div id="captura-left" class="span9">
+			
+			{% for Dato in Consulta %}
+     		<div class="widgetbox">
+				<div class="headtitle">
+                	<div class="btn-group">
+                		<button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                    	<ul class="dropdown-menu">
+                        	<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades/ActualizaEstado/{{ Dato.Id|Encriptacion }}/{{ 'ELIMINADO'|Encriptacion }}"><i class="iconfa-check"></i>&nbsp;Eliminar</a>
+                        	</li>
+                        	<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades"><i class="iconfa-remove"></i>&nbsp;Cancelar</a>
+                        	</li>
+                    	</ul>
+                	</div>
+					<h4 class="widgettitle">Unidad de Medición</h4>
+				</div>
+
+				<div class="widgetcontent">
+					<table class="table table-bordered table-invoice">
+						<tr>
+							<td class="width30">Descripción</td>
+							<td class="width70">
+								{{Dato.Descripcion}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			{% endfor %}
+	</div>
+	<div id="captura-right" class="span3">
+        <div class="alert alert-block">
+            <button data-dismiss="alert" class="close" type="button">&times;</button>
+            <h4>Precaución!</h4>
+            <p style="margin: 8px 0">Los datos podrían ser eliminado permanentemente del sistema, tenga cuidado.</p>
+        </div>
+    </div>		
+</div>
+<br />
+<br />
+<br />
+			

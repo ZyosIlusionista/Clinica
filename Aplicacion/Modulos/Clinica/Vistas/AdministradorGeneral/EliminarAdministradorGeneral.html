@@ -1,0 +1,87 @@
+
+				{% for Dato in Consulta %}
+					<!--Inicio de Widgetbox-->
+     				<h4 class="subtitle2">Eliminar Administrador General</h4>
+     				<br />
+     				<h4 class="widgettitle title-warning">Precaución: Tenga cuidado de no eliminar los usuarios requeridos en su sistema.</h4><br />
+					<div class="widgetbox">
+						<div class="headtitle">
+                            <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li>
+                                      	<a href="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/ActualizaEstado/{{ Dato.Id_Usuario|Encriptacion }}/{{ 'ACTIVO'|Encriptacion }}">Activo</a>
+                                      </li>
+                                      <li>
+                                      	<a href="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/ActualizaEstado/{{ Dato.Id_Usuario|Encriptacion }}/{{ 'INACTIVO'|Encriptacion }}">Inactivo</a>
+                                      </li>
+                                      <li>
+                                      	<a href="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/ActualizaEstado/{{ Dato.Id_Usuario|Encriptacion }}/{{ 'SUSPENDIDO'|Encriptacion }}">Supendido</a>
+                                      </li>
+                                      <li>
+                                      	<a href="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/ActualizaEstado/{{ Dato.Id_Usuario|Encriptacion }}/{{ 'ELIMINADO'|Encriptacion }}">Eliminar</a>
+                                      </li>
+                                      <li>
+                                      	<a href="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral">Regresar</a>
+                                      </li>
+                                    </ul>
+                            </div>
+						<h4 class="widgettitle">Datos Generales</h4>
+						</div>
+					<div class="widgetcontent wc1">
+						<table class="table table-bordered table-invoice">
+							
+							<tr>
+								<td class="width30">Primer Nombre</td>
+								<td class="width70">
+									{{Dato.Nombre_Primero}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="width30">Segundo Nombre</td>
+								<td class="width70">
+									{{Dato.Nombre_Segundo}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="width30">Apellido Paterno</td>
+								<td class="width70">
+									{{Dato.Apellido_Primero}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="width30">Apellido Materno</td>
+								<td class="width70">
+									{{Dato.Apellido_Segundo}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="width30">Correo Electrónico</td>
+								<td class="width70">
+									{{Dato.Correo}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="width30">Teléfono</td>
+								<td class="width70">
+									{{Dato.Telefono_Base}}
+								</td>
+							</tr>
+
+							<tr>
+								<td class="width30">Móvil</td>
+								<td class="width70">
+									{{Dato.Telefono_Movil}}
+								</td>
+							</tr>
+
+						</table>
+					</div>
+					</div>
+				{% endfor %}
+			

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>.:: Medical :: {{TituloAplicacion}} ::.</title>
+
+<!-- Hoja de Estilo -->
+{{Styles|raw}}
+{% block CSS %}
+    {# Anexo de Hojas de Estilo #}
+{% endblock CSS %}
+
+<body>
+
+<!-- Pagina Principal -->
+<div class="mainwrapper">
+    
+    <!-- Encabezado -->
+    <div class="header">
+        
+        <!-- Logotipo -->
+        {% include 'General/Logotipo.html' %}
+
+        <!-- Menu de Encabezado -->
+        <div class="headerinner">
+            <ul class="headmenu">
+     
+                <!-- Encabezado Izquierdo -->
+                <li class="right">
+                    
+                    <!-- Informacion Usuario -->
+                    {% include 'General/DatosUsuario.html' %}
+
+                </li>
+                <!-- #Encabezado Izquierdo -->
+
+            </ul>
+        </div>
+        <!-- #Menu de Encabezado -->
+    </div>
+    <!-- #Encabezado -->
+    
+    {% include 'General/Parts/Menu_Admin.html' %}
+    
+    <!-- Area derecha -->
+    <div class="rightpanel">
+        
+        {% include 'General/BarraNavegacion.html' %}
+        
+        {% include 'General/HeaderContenido.html' %}
+        
+        <!-- Contenido Principal -->
+        <div class="maincontent">
+            <div class="maincontentinner">
+                
+                {% block Contenido %}
+                
+                    <!-- INICIO WIZARD -->
+                    <!-- Encabezado de la forma -->
+                    <h4 class="subtitle2">RESGISTRO DE ASEGURADORAS</h4>
+                    <br />
+                    <form class="stdform" method="post" action="{{Controlador}}" />
+                    <div id="wizard3" class="wizard tabbedwizard">
+                        
+                        <!-- Encabezados del Wizard -->
+                        <ul class="tabbedmenu">
+                            <li>
+                                <a href="#wiz3step1">
+                                    <span class="h2">PASO 1</span>
+                                    <span class="label">Datos de Autentificación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#wiz3step2">
+                                    <span class="h2">PASO 2</span>
+                                    <span class="label">Datos Generales</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#wiz3step3">
+                                    <span class="h2">PASO 3</span>
+                                    <span class="label">Datos Contacto</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <!-- Wizard Autentificacion -->    
+                        <div id="wiz3step1" class="formwiz">
+                            <h4>PASO 1: Datos de Autentificación</h4>
+                            
+                                <p>
+                                    <label>Usuario</label>
+                                    <span class="field">
+                                        <input type="text" name="Usuario" id="Usuario" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                
+                                <p>
+                                    <label>Contraseña</label>
+                                    <span class="field">
+                                        <input type="password" name="Password" id="Password" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                
+                                <p>
+                                    <label>Repetir Contraseña</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                                                        
+                        </div>
+                        
+                        <!-- Wizard de Datos Generales -->
+                        <div id="wiz3step2" class="formwiz">
+                            <h4>PASO 2: Datos Generales</h4> 
+                            
+                                <p>
+                                    <label>Nombre de Aseguradora</label>
+                                    <span class="field">
+                                        <input type="text" name="Nombre_Primero" id="Nombre_Primero" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Razon Social</label>
+                                    <span class="field">
+                                        <input type="text" name="Nombre_Segundo" id="Nombre_Segundo" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>RFC</label>
+                                    <span class="field">
+                                        <input type="RFC" name="RFC" id="RFC" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Contacto</label>
+                                    <span class="field">
+                                        <input type="text" name="Apellido_Primero" id="Apellido_Primero" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                        </div>
+
+                        <!-- Wizard Autentificacion -->    
+                        <div id="wiz3step3" class="formwiz">
+                            <h4>PASO 3: Datos de Contacto</h4>
+                            
+                                <p>
+                                    <label>Direccion</label>
+                                    <span class="field">
+                                        <textarea cols="80" rows="5" class="span5"></textarea>
+                                    </span>
+                                </p>
+                                
+                                <p>
+                                    <label>Municipio</label>
+                                    <span class="field">
+                                        <input type="password" name="Password" id="Password" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                
+                                <p>
+                                    <label>Estado</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Codigo Postal</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Telefono 1</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Telefono 2</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>FAX</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                                                        
+                        </div>
+                        
+                    </div>
+                    </form>            
+                    <!-- FIN WIZARD -->
+
+                {% endblock Contenido %}
+                
+                <!-- Pie de Pagina -->        
+                {% include 'General/Footer.html' %}
+                
+            </div>
+        </div>
+        <!-- #Contenido Principal -->
+
+    </div>
+    <!-- #Area derecha -->
+
+</div>
+<!-- #Pagina Principal -->
+
+</body>
+
+<!-- Javascripts -->
+{% include 'General/Javascript.html' %}
+
+</html>

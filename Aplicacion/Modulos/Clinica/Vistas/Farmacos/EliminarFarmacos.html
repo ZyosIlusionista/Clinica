@@ -1,0 +1,73 @@
+
+<div class="row-fluid">
+    <div id="captura-left" class="span9">
+	{% for Dato in Consulta %}
+        
+		<div class="widgetbox">
+			<div class="headtitle">
+                <div class="btn-group">
+                    <button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/ActualizaEstado/{{ Dato.Id_Farmacos|Encriptacion }}/{{ 'ELIMINADO'|Encriptacion }}"><i class="iconfa-check"></i>&nbsp;Eliminar</a>
+                    </li>
+                    <li>
+                        <a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos"><i class="iconfa-remove"></i>&nbsp;Cancelar</a>
+                    </li>
+                    </ul>
+                </div>
+				<h4 class="widgettitle">Datos del Fármaco</h4>
+			    </div>
+					<div class="widgetcontent">
+					<table class="table table-bordered table-invoice">
+						<tr>
+							<td class="width30">Código</td>
+							<td class="width70">
+								{{Dato.Codigo}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Nombre Comercial</td>
+							<td class="width70">
+								{{Dato.Nombre_Comercial}}
+							</td>							</tr>
+						<tr>
+							<td class="width30">Nombre Génerico</td>
+							<td class="width70">
+								{{Dato.Nombre_Generico}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Categoría</td>
+							<td class="width70">
+								{{Dato.Descripcion}}								
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Precio Venta</td>
+							<td class="width70">
+								{{Dato.Precio_Venta}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Unidades</td>
+							<td class="width70">
+								{{Dato.Unidad}}&nbsp;&nbsp;{{Dato.Descripcion_Unidad}}
+							</td>
+						</tr>
+					</table>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+	<div id="captura-right" class="span3">
+		<h5 class="subtitle">Nota:</h5>
+        <div class="alert alert-block">
+            <button data-dismiss="alert" class="close" type="button">&times;</button>
+            <h4>Precaución!</h4>
+            <p style="margin: 8px 0">Los datos podrían ser eliminado permanentemente del sistema, tenga cuidado.</p>
+        </div>
+    </div>		
+</div>
+
+			

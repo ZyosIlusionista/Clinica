@@ -1,0 +1,19 @@
+{% extends "AdministradorSucursales/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-trash"></span></div>
+    <div class="pagetitle">
+        <h5>Eliminar</h5>
+        <h1>ADMINISTRADOR SUCURSAL</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'AdministradorSucursales/EliminarAdministradorSucursales.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'AdministradorSucursales/Parts/JSListadoAdministradorSucursales.html' %}
+{% endblock scripts %}

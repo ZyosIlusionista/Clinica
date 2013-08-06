@@ -1,0 +1,78 @@
+
+	<div class="row-fluid">
+    	<div id="captura-left" class="span9">
+					
+			<div class="widgetbox">
+				<div class="headtitle">
+                	<div class="btn-group">
+                    	<button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                    	<ul class="dropdown-menu">
+                        	<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/AdministradorSucursales/ListarAdministradoresSucursales"><i class="iconfa-remove"></i>&nbsp;Cancelar</a>
+                        	</li>
+                    	</ul>
+                	</div>
+					<h4 class="widgettitle">Datos Generales</h4>
+				</div>
+				<div class="widgetcontent">
+					{% for Dato in Consulta %}
+					<table class="table table-bordered table-invoice">
+						<tr>
+							<td class="width30">Primer Nombre</td>
+							<td class="width70">
+								{{Dato.Nombre_Primero}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Segundo Nombre</td>
+							<td class="width70">
+								{{Dato.Nombre_Segundo}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Apellido Paterno</td>
+							<td class="width70">
+								{{Dato.Apellido_Primero}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Apellido Materno</td>
+							<td class="width70">
+								{{Dato.Apellido_Segundo}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Correo Electrónico</td>
+							<td class="width70">
+								{{Dato.Correo}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Teléfono</td>
+							<td class="width70">
+								{{Dato.Telefono_Base}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Móvil</td>
+							<td class="width70">
+								{{Dato.Telefono_Movil}}
+							</td>
+						</tr>
+					</table>
+					{% endfor %}
+				</div>
+			</div>
+	</div>
+	<div id="captura-right" class="span3">
+		<h5 class="subtitle">Nota:</h5>
+        <div class="alert alert-success">
+        	<button data-dismiss="alert" class="close" type="button">&times;</button>
+        	<h4>Información</h4>
+        	<p style="margin: 8px 0">Muestra los datos almacenados actualmente en la base de datos.</p>
+        </div>
+    </div>		
+	</div>
+	<br />
+	<br />
+	<br />

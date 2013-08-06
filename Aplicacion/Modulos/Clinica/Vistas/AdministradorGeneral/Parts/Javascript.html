@@ -1,0 +1,91 @@
+
+<!-- Librerias Basicas -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/bootstrap.min.js"></script>
+
+<!-- Librerias Forma -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.smartWizard.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.jgrowl.js"></script>
+
+<!-- Librerias Tablas -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/modernizr.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/responsive-tables.js"></script>
+<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+
+<!-- Scrips -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/custom.js"></script>
+
+<!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+	/* Formularios Wizard */
+	jQuery('#wizard3').smartWizard({onFinish: onFinishCallback});
+
+    /* Envio de la forma */
+	function onFinishCallback(){
+
+        /* Validacion de los datos requeridos en la forma */
+        var u  = jQuery('#Usuario').val();
+        var p  = jQuery('#Password').val();
+        var rp = jQuery('#RePassword').val();
+        var n  = jQuery('#Nombre_Primero').val();
+        var a  = jQuery('#Apellido_Primero').val();
+        var error = false;
+        
+        if ( p != rp ){
+            var msg = "Verifique su Password No Coincide.";
+            jQuery.jGrowl(msg, { life: 5000, header: '¡Error!', position:'bottom-right'});
+
+            error = true;
+        }
+        if ( u == '') {
+            var msg = "Introduzca el campo Usuario.";
+            jQuery.jGrowl(msg, { life: 5000, header: 'Requerido', position:'bottom-right'});
+
+            error = true;
+        } 
+        if ( p == '' || rp == '' ) {
+            var msg = "Introduzca el campo Password.";
+            jQuery.jGrowl(msg, { life: 5000, header: 'Requerido', position:'bottom-right'});
+
+            error = true;
+        }
+        if ( n == '' ) {
+            var msg = "Introduzca el campo Nombre Primero.";
+            jQuery.jGrowl(msg, { life: 5000, header: 'Requerido', position:'bottom-right'});
+
+            error = true;
+        }
+        if ( a == '' ) {
+            var msg = "Introduzca el campo Apellido Primero.";
+            jQuery.jGrowl(msg, { life: 5000, header: 'Requerido', position:'bottom-right'});
+
+            error = true;
+        }
+
+        if (error == false) {
+            jQuery('#Form').submit();
+        }
+    } 
+		
+</script>
+<!-- Erro de Autorizacion -->
+<script>
+jQuery(document).ready(function(){
+
+    /* Error */
+    if(jQuery('#error').val() == 'USUARIOEXISTE'){
+        var msg = "Inténtelo de nuevo, el usuario ya esta registrado.";
+        jQuery.jGrowl(msg, { life: 10000, header: '!Error¡', position:'bottom-right'});
+    }
+
+});
+</script>

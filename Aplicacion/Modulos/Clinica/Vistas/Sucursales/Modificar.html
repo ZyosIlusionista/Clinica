@@ -1,0 +1,20 @@
+{% extends "Sucursales/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-pencil"></span></div>
+    <div class="pagetitle">
+        <h5>Modificar</h5>
+        <h1>Sucursal</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Sucursales/ModificarSucursales.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Sucursales/Parts/JSListadoSucursales.html' %}
+{% endblock scripts %}
+

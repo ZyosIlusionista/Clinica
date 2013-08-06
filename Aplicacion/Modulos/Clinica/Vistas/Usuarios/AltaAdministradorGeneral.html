@@ -1,0 +1,101 @@
+
+					<!-- INICIO WIZARD -->
+                    <!-- Encabezado de la forma -->
+                    <h4 class="subtitle2">ADMINISTRADOR GENERAL</h4>
+                    <br />
+                    <form class="stdform" method="post" action="{{Controlador}}" />
+                    <div id="wizard3" class="wizard tabbedwizard">
+                        
+                        <!-- Encabezados del Wizard -->
+                        <ul class="tabbedmenu">
+                            <li>
+                                <a href="#wiz3step1">
+                                    <span class="h2">PASO 1</span>
+                                    <span class="label">Datos de Autentificación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#wiz3step2">
+                                    <span class="h2">PASO 2</span>
+                                    <span class="label">Datos Generales</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <!-- Wizard Autentificacion -->    
+                        <div id="wiz3step1" class="formwiz">
+                            <h4>PASO 1: Datos de Autentificación</h4>
+                            
+                                <p>
+                                    <label>Usuario</label>
+                                    <span class="field">
+                                        <input type="text" name="Usuario" id="Usuario" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Contraseña</label>
+                                    <span class="field">
+                                        <input type="password" name="Password" id="Password" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                
+                                <p>
+                                    <label>Repetir Contraseña</label>
+                                    <span class="field">
+                                        <input type="password" name="RePassword" id="RePassword" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                                                        
+                        </div>
+                        
+                        <!-- Wizard de Datos Generales -->
+                        <div id="wiz3step2" class="formwiz">
+                            <h4>PASO 2: Datos Generales</h4> 
+                            
+                                <p>
+                                    <label>Primer Nombre</label>
+                                    <span class="field">
+                                        <input type="text" name="Nombre_Primero" id="Nombre_Primero" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Segundo Nombre</label>
+                                    <span class="field">
+                                        <input type="text" name="Nombre_Segundo" id="Nombre_Segundo" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Apellido Paterno</label>
+                                    <span class="field">
+                                        <input type="text" name="Apellido_Primero" id="Apellido_Primero" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Apellido Materno</label>
+                                    <span class="field">
+                                        <input type="text" name="Apellido_Segundo" id="Apellido_Segundo" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Correo</label>
+                                    <span class="field">
+                                        <input type="text" name="Correo" id="Correo" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Telefono</label>
+                                    <span class="field">
+                                        <input type="text" name="Telefono_Base" id="Telefono_Base" class="input-xxlarge" />
+                                    </span>
+                                </p>
+                                <p>
+                                    <label>Movil</label>
+                                    <span class="field">
+                                        <input type="text" name="Telefono_Movil" id="Telefono_Movil" class="input-xxlarge" />
+                                    </span>
+                                </p>                                                              
+                        </div>
+                        
+                    </div>
+                    </form>            
+                    <!-- FIN WIZARD -->

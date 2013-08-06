@@ -1,0 +1,19 @@
+{% extends "CodigosOncologicos/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-edit"></span></div>
+    <div class="pagetitle">
+        <h5>Agregar Nuevo Registro</h5>
+        <h1>CÓDIGO ONCOLÓGICO</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'CodigosOncologicos/AltaCodigosOncologicos.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'CodigosOncologicos/Parts/JSAltaCodigosOncologicos.html' %}
+{% endblock scripts %}

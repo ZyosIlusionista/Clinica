@@ -1,0 +1,19 @@
+{% extends "Sucursales/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-trash"></span></div>
+    <div class="pagetitle">
+        <h5>Eliminar</h5>
+        <h1>SUCURSAL</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Sucursales/EliminarSucursales.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Sucursales/Parts/JSListadoSucursales.html' %}
+{% endblock scripts %}

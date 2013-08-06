@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>.:: Medical :: {{TituloAplicacion}} ::.</title>
+
+<!-- Hoja de Estilo -->
+{{Styles|raw}}
+{% block CSS %}
+    {# Anexo de Hojas de Estilo #}
+{% endblock CSS %}
+<style type="text/css">
+a{text-decoration:none} 
+a:hover{text-decoration: underline ; color:black;}
+a:link { color: black; } /* enlace no visitado*/ 
+a:visited { color: black; } /* enlace visitado */ 
+</style>
+
+<body>
+
+<!-- Pagina Principal -->
+<div class="mainwrapper">
+    
+    <!-- Encabezado -->
+    <div class="header">
+        
+        <!-- Logotipo -->
+        {% include 'General/Logotipo.html' %}
+
+        <!-- Menu de Encabezado -->
+        <div class="headerinner">
+            <ul class="headmenu">
+     
+                <!-- Encabezado Izquierdo -->
+                <li class="right">
+                    
+                    <!-- Informacion Usuario -->
+                    {% include 'General/DatosUsuario.html' %}
+
+                </li>
+                <!-- #Encabezado Izquierdo -->
+
+            </ul>
+        </div>
+        <!-- #Menu de Encabezado -->
+    </div>
+    <!-- #Encabezado -->
+    
+    {% include 'Sucursales/Parts/Menu_Sucursales.html' %}
+    
+    <!-- Area derecha -->
+    <div class="rightpanel">
+        
+        <!-- Barra de Navegacion -->
+        {% block BarraNavegacion %}
+        <ul class="breadcrumbs">
+            <li><a href="#"><i class="iconfa-home"></i></a> 
+                <span class="separator"></span>
+            </li>
+            <li>Sucursales</li>
+        </ul>
+        {% endblock BarraNavegacion %}
+
+        {% block Encabezado %}
+            {% include 'General/HeaderContenido.html' %}
+        {% endblock Encabezado %}
+        
+        <!-- Contenido Principal -->
+        <div class="maincontent">
+            <div class="maincontentinner">
+                
+                <!-- Contenido de Sistema -->
+                {% block Contenido %}
+                
+                {% endblock Contenido %}
+                
+                <!-- Pie de Pagina -->        
+                {% include 'General/Footer.html' %}
+                
+            </div>
+        </div>
+        <!-- #Contenido Principal -->
+
+    </div>
+    <!-- #Area derecha -->
+
+</div>
+<!-- #Pagina Principal -->
+
+</body>
+
+<!-- Javascripts -->
+{% block scripts %}
+
+{% endblock scripts %}
+{{ValidarFormulario|raw}}
+
+</html>

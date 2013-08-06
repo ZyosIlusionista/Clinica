@@ -1,0 +1,36 @@
+
+<!-- Login !-->
+<div class="loginpanel">
+    <div class="loginpanelinner">
+        
+        <!-- Logotipo !-->
+        <div class="logo animate0 bounceIn">
+            <img src="{{NeuralRutasApp.RutaPublico}}images/logo.png" alt="" />
+        </div>
+
+        <!-- Forma !-->
+        <form id="login" action="{{NeuralRutasApp.RutaURL}}Index/Autenticacion" method="post" />
+            <div class="inputwrapper login-alert">
+                <div class="alert alert-error">Invalido usuario o password!</div>
+            </div>
+            <div class="inputwrapper animate1 bounceIn">
+                <input type="text" name="username" id="username" placeholder="Introduzca el usuario" value="" />
+            </div>
+            <div class="inputwrapper animate2 bounceIn">
+                <input type="password" name="password" id="password" placeholder="Introduzca la contraseña" value="" />
+            </div>
+            <div id="sucursales">
+            
+            </div>
+            <div class="inputwrapper animate3 bounceIn">
+                <button name="submit" value="{{Validacion}}">Iniciar Session</button>
+            </div>
+        </form>
+
+        <!-- Control de Accceso -->
+        <input type="hidden" id="error" name="error" value="{{Error}}" />
+
+    </div>
+</div>
+<!-- #Login !-->
+

@@ -1,0 +1,45 @@
+
+    <!-- Importar Datos -->
+    <h4 class="widgettitle">Datos a Importar</h4>
+
+        <table id="dyntable" class="table table-bordered table-hover">
+            <colgroup>
+                <col class="con0" />
+                <col class="con0" />
+                <col class="con0" />
+                <col class="con0" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="head0 center">No.</th>
+                    <th>Código</th>
+                    <th>Nombre Comercial</th>
+                    <th>Nombre Generico</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set Contador = 0 %}
+                {% for Listado in Listado %}
+                {% set Contador = Contador + 1 %}
+                <tr>
+                    <td class="center">{{Contador}}</td>
+                    <td>{{Listado.Codigo}}</td>
+                    <td>{{Listado.Nombre_Comercial}}</td>
+                    <td>{{Listado.Nombre_Generico}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+		</table>
+
+        <form id="Form" name="Form" class="stdform" method="post" action="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Importacion/GuardarImportacion" />
+
+			<p class="stdformbutton">
+                <button type="submit" class="btn btn-primary"><i class="iconfa-ok"></i>&nbsp;&nbsp;Importar Datos</button>
+            </p>
+
+			<input name="Archivo" id="Archivo" type="hidden" value="{{Archivo}}" /> 
+	  		<input name="Categoria" id="Categoria" type="hidden" value="{{Categoria}}" /> 
+			<input name="Validacion" id="Validacion" type="hidden" value="{{Validacion}}" /> 
+		</form>
+
+        <br />

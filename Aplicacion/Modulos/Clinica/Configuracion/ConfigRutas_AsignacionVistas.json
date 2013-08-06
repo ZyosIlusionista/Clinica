@@ -1,0 +1,17 @@
+{
+	"Rutas":
+	{
+		"Modulo":			"Clinica",
+		"Carpeta_Public":	"Medical",
+		"Carpeta_Imagenes":	"images", 
+		"Carpeta_Css":		"css",
+		"Carpeta_Js":		"js"
+	},
+	"Asignacion_Vistas":
+	{
+		"0":
+		[
+			"{% Nombre_Archivo %}"
+		]
+	}
+}

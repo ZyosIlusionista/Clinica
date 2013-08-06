@@ -1,0 +1,19 @@
+{% extends "AdministradorSucursales/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-edit"></span></div>
+    <div class="pagetitle">
+        <h5>Agregar Nuevo Registro</h5>
+        <h1>ADMINISTRADOR SUCURSALES</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'AdministradorSucursales/AltaAdministradorSucursales.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'AdministradorSucursales/Parts/JsAltaAdministradorSucursales.html' %}
+{% endblock scripts %}

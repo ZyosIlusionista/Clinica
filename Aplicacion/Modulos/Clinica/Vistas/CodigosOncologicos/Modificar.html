@@ -1,0 +1,20 @@
+{% extends "CodigosOncologicos/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-pencil"></span></div>
+    <div class="pagetitle">
+        <h5>Modificar</h5>
+        <h1>CÓDIGO ONCOLÓGICO</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'CodigosOncologicos/ModificarCodigosOncologicos.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'CodigosOncologicos/Parts/JSListadoCodigosOncologicos.html' %}
+{% endblock scripts %}
+

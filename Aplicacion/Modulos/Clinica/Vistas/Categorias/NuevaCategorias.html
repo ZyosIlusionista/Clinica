@@ -1,0 +1,19 @@
+{% extends "Categorias/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-edit"></span></div>
+    <div class="pagetitle">
+        <h5>Agregar Nueva Categoria</h5>
+        <h1>CATEGORIAS</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Categorias/AltaCategorias.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Categorias/Parts/JSAltaCategorias.html' %}
+{% endblock scripts %}

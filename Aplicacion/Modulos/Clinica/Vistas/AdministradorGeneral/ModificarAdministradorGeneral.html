@@ -1,0 +1,73 @@
+
+					<!--Inicio de Widgetbox-->
+     				<h4 class="subtitle2">Editar Administrador  General</h4>
+     				<br />
+					<div class="widgetbox">
+						<div class="headtitle">
+                            <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li>
+                                      	<a href="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/ListarAdministradoresGenerales">Regresar</a>
+                                      </li>
+                                    </ul>
+                            </div>
+						<h4 class="widgettitle">Datos Generales</h4>
+						</div>
+					<div class="widgetcontent wc1">
+					{% for Dato in Consulta %}
+						<form id="Form" name="Form" class="stdform" method="post" action="{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/GuardarModificacion" />
+							
+							<div class="par control-group">
+								<label class="control-label" for="Primer_Nombre">Primer Nombre</label>
+								<div class="controls">
+									<input type="text" name="Nombre_Primero" id="Nombre_Primero" class="input-xlarge" value="{{Dato.Nombre_Primero}}" />
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Segundo_Nombre">Segundo Nombre</label>
+								<div class="controls">
+									<input type="text" name="Nombre_Segundo" id="Nombre_Segundo" class="input-xlarge" value="{{Dato.Nombre_Segundo}}" />
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Apellido_Paterno">Apellido Paterno</label>
+								<div class="controls">
+									<input type="text" name="Apellido_Primero" id="Apellido_Primero" class="input-xlarge" value="{{Dato.Apellido_Primero}}" />
+								</div>
+							<div class="par control-group">
+								<label class="control-label" for="Apellido_Materno">Apellido Materno</label>
+								<div class="controls">
+									<input type="text" name="Apellido_Segundo" id="Apellido_Segundo" class="input-xlarge"  value="{{Dato.Apellido_Segundo}}"/>
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Correo_Electronico">Correo Electrónico</label>
+								<div class="controls">
+									<input type="text" name="Correo" id="Correo" class="input-xlarge" value="{{Dato.Correo}}" />
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Telefono">Teléfono</label>
+								<div class="controls">
+									<input type="text" name="Telefono_Base" id="Telefono_Base" class="input-xlarge" value="{{Dato.Telefono_Base}}" />
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Movil">Móvil</label>
+								<div class="controls">
+									<input type="text" name="Telefono_Movil" id="Telefono_Movil" class="input-xlarge" value="{{Dato.Telefono_Movil}}" />
+								</div>
+							</div>
+
+							<p class="stdformbutton">
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                            </p>
+
+							<input type="hidden" name="Id" id="Id" value="{{ Dato.Id|Encriptacion }}">
+							<input type="hidden" name="Validacion" id="Validacion" value="{{Validacion}}">
+						</form>
+					{% endfor %}
+					</div>
+				</div>
+

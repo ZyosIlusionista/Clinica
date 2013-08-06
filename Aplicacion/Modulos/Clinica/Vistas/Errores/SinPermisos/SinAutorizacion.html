@@ -1,0 +1,14 @@
+{% extends "Errores/SinPermisos/Base.html" %}
+
+{% block Contenido %}
+    <div class="errortitle">
+        <h4 class="animate0 fadeInUp">El Usuario ó la Contraseña ¡No es Correcta!.</h4>
+        <h4 class="animate0 fadeInUp">Intentelo Nuevamente.</h4>
+        <br />
+        <img src="{{NeuralRutasApp.RutaPublico}}images/login.png" class="animate1 bounceIn">
+        <br />
+        <div class="errorbtns animate4 fadeInUp">
+            <a href="{{NeuralRutasApp.RutaURLBase}}" class="btn btn-large">Inicio</a>
+        </div>
+    </div>
+{% endblock Contenido %}

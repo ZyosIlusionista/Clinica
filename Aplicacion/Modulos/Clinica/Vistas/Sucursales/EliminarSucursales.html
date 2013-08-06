@@ -1,0 +1,92 @@
+	
+	<div class="row-fluid">
+    	<div id="captura-left" class="span9">
+			{% for Dato in Consulta %}
+			<div class="widgetbox">
+				<div class="headtitle">
+                	<div class="btn-group">
+                    	<button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                    	<ul class="dropdown-menu">
+                    		<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales/ActualizaEstado/{{ Dato.Id|Encriptacion }}/{{ 'ACTIVO'|Encriptacion }}"><i class="iconfa-check"></i>&nbsp;Activo</a>
+                        	</li>
+                        	<li>
+                    			<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales/ActualizaEstado/{{ Dato.Id|Encriptacion }}/{{ 'INACTIVO'|Encriptacion }}"><i class="iconfa-check"></i>&nbsp;Inactivo</a>
+                        	</li>
+                        	<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales/ActualizaEstado/{{ Dato.Id|Encriptacion }}/{{ 'SUSPENDIDO'|Encriptacion }}"><i class="iconfa-check"></i>&nbsp;Supendido</a>
+                        	</li>
+                        	<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales/ActualizaEstado/{{ Dato.Id|Encriptacion }}/{{ 'ELIMINADO'|Encriptacion }}"><i class="iconfa-check"></i>&nbsp;Eliminar</a>
+                        	</li>
+                        	<li>
+                            	<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales"><i class="iconfa-remove"></i>&nbsp;Cancelar</a>
+                        	</li>
+                    	</ul>
+                	</div>
+				<h4 class="widgettitle">Datos Generales</h4>
+				</div>
+				
+				<div class="widgetcontent">
+					<table class="table table-bordered table-invoice">
+						<tr>
+							<td class="width30">Nombre</td>
+							<td class="width70">
+								{{Dato.Nombre}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Estado</td>
+							<td class="width70">
+								{{Dato.Estado}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Población</td>
+							<td class="width70">
+								{{Dato.Poblacion}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Responsable</td>
+							<td class="width70">
+								{{Dato.Responsable}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Correo Electrónico</td>
+							<td class="width70">
+								{{Dato.Correo}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Teléfono</td>
+							<td class="width70">
+								{{Dato.Telefono_Base}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Teléfono 2</td>
+							<td class="width70">
+								{{Dato.Telefono_Alternativo}}
+							</td>
+						</tr>
+						<tr>
+							<td class="width30">Dirección</td>
+							<td class="width70">
+								{{Dato.Direccion}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			{% endfor %}
+	</div>
+	<div id="captura-right" class="span3">
+        <div class="alert alert-block">
+            <button data-dismiss="alert" class="close" type="button">&times;</button>
+            <h4>Precaución!</h4>
+            <p style="margin: 8px 0">Los datos podrían ser eliminado permanentemente del sistema, tenga cuidado.</p>
+        </div>
+    </div>		
+</div>

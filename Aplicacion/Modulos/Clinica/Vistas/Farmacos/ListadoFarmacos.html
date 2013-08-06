@@ -1,0 +1,105 @@
+<div class="row-fluid">
+    <div class="span6">
+    <ul class="list-nostyle list-inline">
+        <li>
+    <a class="btn btn-rounded" href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/AgregarVisualizar"><i class="iconfa-external-link"></i> &nbsp;Agrega Nuevo Registro</a>
+        </li>
+        <li>
+    <a class="btn btn-rounded" href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Importacion"><i class="iconfa-file"></i> &nbsp;Importar desde un Excel</a>
+        </li>
+        <li>
+    <a class="btn btn-rounded" href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/ExportacionExcel"><i class="iconfa-download-alt"></i> &nbsp;Exportar a Excel</a>
+        </li>
+    </ul>
+</div>
+    <div class="span6">
+    <div class="btn-group">
+            <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="iconfa-th"></i> &nbsp; Listado por Categorias <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="realizaProceso('{{'Todo'|Encriptacion}}')"><i class="iconfa-folder-open"></i> &nbsp;Todas las Categorias</a></li>
+                    <li class="divider"></li>
+                    {% for Categoria in Categorias%}
+                    <li><a href="#" onclick="realizaProceso('{{Categoria.Id|Encriptacion}}')"><i class="iconfa-plus"></i> &nbsp;{{Categoria.Descripcion}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+    </div>
+</div>
+<div id="TablaContenido">
+ 	<h4 class="widgettitle">Lista de Fármacos</h4>
+    <table id="dyntable" class="table table-bordered table-hover">
+        <colgroup>
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0 center">No.</th>
+                <th class="head1">Categoría</th>
+                <th class="head0">Código</th>
+                <th class="head1">Nombre Comercial</th>
+                <th class="head0">Nombre Genérico</th>
+                <th class="head0">Precio de Venta</th>
+                <th class="head1 nosort center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set Contador = 0 %}
+            {% for Listado in Listado %}
+            {% set Contador = Contador + 1 %}
+            <tr class="gradeC">
+                <td class="center">{{Contador}}</td>
+                <td>{{Listado.Descripcion}}</td>
+                <td>{{Listado.Codigo}}</td>
+                <td>{{Listado.Nombre_Comercial}}</td>
+                <td>{{Listado.Nombre_Generico}}</td>
+                <td>{{Listado.Precio_Venta}}</td>
+                <td class="center">
+                    <ul class='list-nostyle list-inline tooltipsample'>
+                        <li>
+                            <a href='{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/MostrarFarmacos/{{Listado.Id_Farmacos|Encriptacion}}' data-placement='top' data-rel='tooltip' data-original-title='Mostrar' class="btn btn-circle"><i class='iconfa-eye-open'></i></a>
+                        </li>
+                        <li>
+                            <a href='{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/ModificarFarmacos/{{Listado.Id_Farmacos|Encriptacion}}' data-placement='top' data-rel='tooltip' data-original-title='Editar' class="btn btn-circle"><i class='iconfa-pencil'></i></a>
+                        </li>
+                        <li>
+                            <a href='{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/EliminarFarmacos/{{Listado.Id_Farmacos|Encriptacion}}' data-placement='top' data-rel='tooltip' data-original-title='Eliminar' class="btn btn-circle"><i class='iconfa-trash'></i></a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<!-- Listado de la tabla -->
+<script type="text/javascript">
+jQuery(document).ready(function(){
+
+    /* Tablas Dinamicas */
+    oTable = jQuery('#dyntable').dataTable({
+        
+        "sPaginationType": "full_numbers",
+        "aaSortingFixed": [[0,'asc']],
+        "fnDrawCallback": function(oSettings) {
+            jQuery.uniform.update();
+            jQuery('a[data-rel]').each(function() {
+                jQuery(this).attr('rel', jQuery(this).data('rel'));
+            });
+        
+            // tooltip
+            if(jQuery('.tooltipsample').length > 0)
+                jQuery('.tooltipsample').tooltip({selector: "a[rel=tooltip]"});
+            }
+    });
+
+});
+</script>
+</div>
+    <br />
+    <br />
+    <br />

@@ -1,0 +1,128 @@
+
+	<!-- Modificar -->
+	<div class="row-fluid">
+    	<div id="captura-left" class="span9">
+
+			<div class="widgetbox">
+				<div class="headtitle">
+                	<div class="btn-group">
+                    	<button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                   		<ul class="dropdown-menu">
+                    		<li>
+                        		<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales/ListarSucursales"><i class="iconfa-remove"></i>&nbsp;Cancelar</a>
+                        	</li>
+                    	</ul>
+                	</div>
+					<h4 class="widgettitle">Datos Sucursal</h4>
+				</div>
+
+				<div class="widgetcontent">
+					{% for Dato in Consulta %}
+					<form id="Form" name="Form" class="stdform" method="post" action="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Sucursales/GuardarModificacionSucursales" />
+							
+						<div class="par control-group">
+							<label class="control-label" for="Nombre">Nombre</label>
+							<div class="controls">
+								<input type="text" name="Nombre" id="Nombre" class="input-xlarge" value="{{Dato.Nombre}}" />
+							</div>
+						</div>
+
+						<div class="par control-group">
+							<label class="control-label" for="Estado">Estado</label>
+							<div class="controls">
+								<select name="Estado" id="Estado" class="uniformselect" >
+									<option value='{{Dato.Estado}}'>{{Dato.Estado}}</option>
+                                	<option value="">Seleccione una Estado</option>
+         							<option value='Aguascalientes'>Aguascalientes</option>
+                            	    <option value='Baja California'>Baja California</option>
+                                	<option value='Baja California Sur'>Baja California Sur</option>
+                                	<option value='Campeche'>Campeche</option>
+                                	<option value='Chiapas'>Chiapas</option>
+                                	<option value='Chihuahua'>Chihuahua</option>
+                                	<option value='Coahuila de Zaragoza'>Coahuila</option>
+                                	<option value='Colima'>Colima</option>
+                                	<option value='Distrito Federal'>Distrito Federal</option>
+                                	<option value='Durango'>Durango</option>
+                                	<option value='Guanajuato'>Guanajuato</option>
+                                	<option value='Guerrero'>Guerrero</option>
+                                	<option value='Hidalgo'>Hidalgo</option>
+                                	<option value='Jalisco'>Jalisco</option>
+                                	<option value='Mexico'>Mexico</option>
+                                	<option value='Michoacan'>Michoacan</option>
+                                	<option value='Morelos'>Morelos</option>
+                                	<option value='Nayarit'>Nayarit</option>
+                                	<option value='Nuevo Leon'>Nuevo Leon</option>
+                                	<option value='Oaxaca'>Oaxaca</option>
+                                	<option value='Puebla'>Puebla</option>
+                                	<option value='Queretaro'>Queretaro</option>
+                                	<option value='Quintana Roo'>Quintana Roo</option>
+                                	<option value='San Luis Potosi'>San Luis Potosi</option>
+                                	<option value='Sinaloa'>Sinaloa</option>
+                                	<option value='Sonora'>Sonora</option>
+                                	<option value='Tabasco'>Tabasco</option>
+                                	<option value='Tamaulipas'>Tamaulipas</option>
+                                	<option value='Tlaxcala'>Tlaxcala</option>
+                                	<option value='Veracruz'>Veracruz</option>
+                                	<option value='Yucatan'>Yucatan</option>
+                                	<option value='Zacatecas'>Zacatecas</option>
+                            	</select>
+							</div>
+						</div>
+						<div class="par control-group">
+							<label class="control-label" for="Poblacion">Población</label>
+							<div class="controls">
+								<input type="text" name="Poblacion" id="Poblacion" class="input-xlarge" value="{{Dato.Poblacion}}" />
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Responsable">Responsable</label>
+								<div class="controls">
+									<input type="text" name="Responsable" id="Responsable" class="input-xlarge"  value="{{Dato.Responsable}}"/>
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Correo_Electronico">Correo Electrónico</label>
+								<div class="controls">
+									<input type="text" name="Correo" id="Correo" class="input-xlarge" value="{{Dato.Correo}}" />
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Telefono">Teléfono</label>
+								<div class="controls">
+									<input type="text" name="Telefono_Base" id="Telefono_Base" class="input-xlarge" value="{{Dato.Telefono_Base}}" />
+								</div>
+							</div>
+							
+							<div class="par control-group">
+								<label class="control-label" for="Teledono2">Teléfono 2</label>
+								<div class="controls">
+									<input type="text" name="Telefono_Alternativo" id="Telefono_Alternativo" class="input-xlarge" value="{{Dato.Telefono_Alternativo}}" />
+								</div>
+							</div>
+							<div class="par control-group">
+								<label class="control-label" for="Direccion">Dirección</label>
+								<div class="controls">
+									<textarea name="Direccion" id="Direccion" class="input-xlarge" cols="80" rows="5">{{Dato.Direccion}}</textarea> 
+								</div>
+							</div>
+
+							<p class="stdformbutton">
+                    			<button type="submit" class="btn btn-primary"><i class="iconfa-ok"></i>&nbsp;&nbsp;Guardar Datos</button>
+                  			</p>
+
+							<input type="hidden" name="Id" id="Id" value="{{ Dato.Id|Encriptacion }}">
+							<input type="hidden" name="Validacion" id="Validacion" value="{{Validacion}}">
+						</form>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+	</div>
+	<div id="captura-right" class="span3">
+        <div class="alert alert-info">
+            <button data-dismiss="alert" class="close" type="button">&times;</button>
+            <h4>Precaución!</h4>
+            <p style="margin: 8px 0">Los datos podrían ser modificado permanentemente del sistema, tenga cuidado.</p>
+        </div>
+    </div>		
+	</div>
+

@@ -1,0 +1,52 @@
+    
+    <ul class="list-nostyle list-inline">
+        <li>
+            <a class="btn btn-rounded" href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades/AgregarVisualizar"><i class="iconfa-external-link"></i> &nbsp;Agrega Nuevo Registro</a>
+        </li>
+        <li>
+            <a class="btn btn-rounded" href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades/ExportacionExcel"><i class="iconfa-download-alt"></i> &nbsp;Exportar a Excel</a>
+        </li>
+    </ul>
+ 	
+    <h4 class="widgettitle">Lista de Unidades</h4>
+    <table id="dyntable" class="table table-bordered table-hover">
+        <colgroup>
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+            <col class="con0" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="head0 center">No.</th>
+                <th class="head1">Descripción</th>
+                <th class="head0 nosort center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set Contador = 0 %}
+            {% for Listado in Listado %}
+            {% set Contador = Contador + 1 %}
+            <tr class="gradeC">
+                <td class="center">{{Contador}}</td>
+                <td>{{Listado.Descripcion}}</td>
+                <td class="center">
+                    <ul class='list-nostyle list-inline tooltipsample'>
+                        <li>
+                            <a href='{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades/MostrarUnidades/{{Listado.Id|Encriptacion}}' data-placement='top' data-rel='tooltip' data-original-title='Mostrar' class="btn btn-circle"><i class='iconfa-eye-open'></i></a>
+                            		</li>
+                        <li>
+                            <a href='{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades/ModificarUnidades/{{Listado.Id|Encriptacion}}' data-placement='top' data-rel='tooltip' data-original-title='Editar' class="btn btn-circle"><i class='iconfa-pencil'></i></a>
+                        </li>
+                        <li>
+                            <a href='{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Unidades/EliminarUnidades/{{Listado.Id|Encriptacion}}' data-placement='top' data-rel='tooltip' data-original-title='Eliminar' class="btn btn-circle"><i class='iconfa-trash'></i></a>
+                		</li>
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />

@@ -1,0 +1,20 @@
+
+{% extends "AdministradorGeneral/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-user"></span></div>
+    <div class="pagetitle">
+        <h5>Registro de Nuevo Usuario</h5>
+        <h1>ADMINISTRADOR GENERAL</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'AdministradorGeneral/AltaAdministradorGeneral.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'AdministradorGeneral/Parts/JsAlta.html' %}
+{% endblock scripts %}

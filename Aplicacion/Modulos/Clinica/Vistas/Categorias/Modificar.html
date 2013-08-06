@@ -1,0 +1,20 @@
+{% extends "Categorias/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-pencil"></span></div>
+    <div class="pagetitle">
+        <h5>Modificar</h5>
+        <h1>CATEGORIA</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Categorias/ModificarCategorias.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Categorias/Parts/JSListadoCategorias.html' %}
+{% endblock scripts %}
+

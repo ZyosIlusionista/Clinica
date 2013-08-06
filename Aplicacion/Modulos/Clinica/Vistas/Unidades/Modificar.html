@@ -1,0 +1,20 @@
+{% extends "Unidades/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-pencil"></span></div>
+    <div class="pagetitle">
+        <h5>Modificar</h5>
+        <h1>UNIDADES</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Unidades/ModificarUnidades.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Unidades/Parts/JSListadoUnidades.html' %}
+{% endblock scripts %}
+

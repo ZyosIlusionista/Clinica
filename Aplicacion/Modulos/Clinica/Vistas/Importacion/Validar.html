@@ -1,0 +1,20 @@
+{% extends "Importacion/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-hdd"></span></div>
+    <div class="pagetitle">
+        <h5>Validar Datos</h5>
+        <h1>IMPORTACIÓN DE DATOS</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Importacion/ValidarImportacion.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Importacion/Parts/JSListadoImportacion.html' %}
+{% endblock scripts %}
+

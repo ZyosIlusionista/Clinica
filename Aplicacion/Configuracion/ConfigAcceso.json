@@ -1,0 +1,116 @@
+{
+	"DEFAULT":
+	{
+		"Enrutamiento":
+		{
+			"Carpeta":				"Clinica/",
+			"Configuracion":		"Configuracion/",
+			"Ayudas":				"Helpers/",
+			"Vendors":				"Vendors/",
+			"Controladores":		"Controladores/",
+			"Modelos":				"Modelos/",
+			"Vistas":				"Vistas/"
+		},
+		"Configuracion":
+		{
+			"Entorno_Desarrollo": 	false,
+			"Llave_Encriptacion":	"N3ur4l3ncr1pt4c10n",
+			"Codificacion":			"Content-Type: text/html; charset=utf-8"
+		}
+	},
+	"CLINICA":
+	{
+		"Enrutamiento":
+		{
+			"Carpeta":				"Clinica/",
+			"Configuracion":		"Configuracion/",
+			"Ayudas":				"Helpers/",
+			"Vendors":				"Vendors/",
+			"Controladores":		"Controladores/",
+			"Modelos":				"Modelos/",
+			"Vistas":				"Vistas/"
+		},
+		"Configuracion":
+		{
+			"Entorno_Desarrollo": 	false,
+			"Llave_Encriptacion":	"PgaidFlpLm93hlq34cgwWppaKjA=",
+			"Codificacion":			"Content-Type: text/html; charset=utf-8"
+		}
+	},
+	"ERROR":
+	{
+		"Enrutamiento":
+		{
+			"Carpeta":				"Error/",
+			"Configuracion":		"Configuracion/",
+			"Ayudas":				"Helpers/",
+			"Vendors":				"Vendors/",
+			"Controladores":		"Controladores/",
+			"Modelos":				"Modelos/",
+			"Vistas":				"Vistas/"
+		},
+		"Configuracion":
+		{
+			"Entorno_Desarrollo": 	false,
+			"Llave_Encriptacion":	"PgaidFlpLm93hlq34cgwWppaKjA=",
+			"Codificacion":			"Content-Type: text/html; charset=utf-8"
+		}
+	},
+	"CENTRAL":
+	{
+		"Enrutamiento":
+		{
+			"Carpeta":				"Central/",
+			"Configuracion":		"Configuracion/",
+			"Ayudas":				"Helpers/",
+			"Vendors":				"Vendors/",
+			"Controladores":		"Controladores/",
+			"Modelos":				"Modelos/",
+			"Vistas":				"Vistas/"
+		},
+		"Configuracion":
+		{
+			"Entorno_Desarrollo": 	false,
+			"Llave_Encriptacion":	"PgaidFlpLm93hlq34cgwWppaKjA=",
+			"Codificacion":			"Content-Type: text/html; charset=utf-8"
+		}
+	},
+	"ADMINISTRADORGENERAL":
+	{
+		"Enrutamiento":
+		{
+			"Carpeta":				"AdministradorGeneral/",
+			"Configuracion":		"Configuracion/",
+			"Ayudas":				"Helpers/",
+			"Vendors":				"Vendors/",
+			"Controladores":		"Controladores/",
+			"Modelos":				"Modelos/",
+			"Vistas":				"Vistas/"
+		},
+		"Configuracion":
+		{
+			"Entorno_Desarrollo": 	false,
+			"Llave_Encriptacion":	"PgaidFlpLm93hlq34cgwWppaKjA=",
+			"Codificacion":			"Content-Type: text/html; charset=utf-8"
+		}
+	},
+	"ADMINISTRADOR":
+	{
+		"Enrutamiento":
+		{
+			"Carpeta":				"Administrador/",
+			"Configuracion":		"Configuracion/",
+			"Ayudas":				"Helpers/",
+			"Vendors":				"Vendors/",
+			"Controladores":		"Controladores/",
+			"Modelos":				"Modelos/",
+			"Vistas":				"Vistas/"
+		},
+		"Configuracion":
+		{
+			"Entorno_Desarrollo": 	false,
+			"Llave_Encriptacion":	"PgaidFlpLm93hlq34cgwWppaKjA=",
+			"Codificacion":			"Content-Type: text/html; charset=utf-8"
+		}
+	}
+}

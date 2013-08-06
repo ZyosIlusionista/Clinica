@@ -1,0 +1,19 @@
+{% extends "AdministradorSucursales/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-eye-open"></span></div>
+    <div class="pagetitle">
+        <h5>Visualizar</h5>
+        <h1>ADMINISTRADOR SUCURSALES</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'AdministradorSucursales/VisualizarAdministradorSucursales.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'AdministradorSucursales/Parts/JSListadoAdministradorSucursales.html' %}
+{% endblock scripts %}

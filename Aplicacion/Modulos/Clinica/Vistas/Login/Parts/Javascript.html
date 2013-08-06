@@ -1,0 +1,65 @@
+
+<!-- Librerias -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/modernizr.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery.jgrowl.js"></script>
+
+<!-- Custom -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/custom.js"></script>
+
+<!-- Valida que los campos no sean vacios -->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('#login').submit(function(){
+
+            /* Datos del usuario */
+            var u  = jQuery('#username').val();
+            var p  = jQuery('#password').val();
+
+            /* Valida que username y password como administrador */            
+            if ( u == '' && p == ''){
+                    var msg = "Introduzca los datos del Usuario.";
+                    jQuery.jGrowl(msg, { life: 5000, header: '¡Error!'});
+
+                    jQuery('.login-alert').fadeIn();
+
+                    return false;
+            }
+            else {
+                if ( u == ''){
+                    var msg = "Introduzca el Usuario.";
+                    jQuery.jGrowl(msg, { life: 5000, header: '¡Error!'});
+                
+                    jQuery('.login-alert').fadeIn();
+                    return false;
+                }
+                if (p == ''){
+                    var msg = "Introduzca la contraseña.";
+                    jQuery.jGrowl(msg, { life: 5000, header: '¡Error!'});
+                
+                    jQuery('.login-alert').fadeIn();
+                    return false;
+                }
+            }
+                       
+        });
+    });
+</script>
+
+<!-- Erro de Autorizacion -->
+<script>
+jQuery(document).ready(function(){
+
+    /* Error de Acceso no Autorizado */
+    if(jQuery('#error').val() == 'NOAUTORIZADO'){
+        var msg = "Inténtelo de nuevo e introduzca sus datos correctamente.";
+        jQuery.jGrowl(msg, { life: 8000, header: 'Error Acceso No Autorizado!'});
+    }
+
+});
+</script>
+

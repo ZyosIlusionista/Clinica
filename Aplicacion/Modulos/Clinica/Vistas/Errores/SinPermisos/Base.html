@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>.:: Medical :: {{TituloAplicacion}} ::.</title>
+
+{{Styles|raw}}
+
+<!-- Javascripts -->
+<!-- Librerias Basicas -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/bootstrap.min.js"></script>
+<!-- Scrips -->
+<script type="text/javascript" src="{{NeuralRutasApp.RutaJs}}/custom.js"></script>
+
+
+<body class="errorpage">
+
+<div class="mainwrapper">
+    
+    <div class="header">
+        <!-- Logotipo -->
+        <div class="logo">
+            <a href="#"><img src="{{NeuralRutasApp.RutaPublico}}images/logo.png" alt="" /></a>
+        </div>
+        <div class="headerinner">
+            <ul class="headmenu">
+                
+            </ul>
+        </div>
+    </div>
+    
+    {% block Contenido %}
+        {# Contenido #}
+    {% endblock Contenido %}
+    
+</div>
+
+</body>
+</html>

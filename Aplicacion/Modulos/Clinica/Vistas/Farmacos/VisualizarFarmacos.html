@@ -1,0 +1,71 @@
+
+	<!--Plantilla Visualizar-->
+	<div class="row-fluid">
+    	<div id="captura-left" class="span9">
+		
+		<div class="widgetbox">
+			<div class="headtitle">
+            	<div class="btn-group">
+                    <button data-toggle="dropdown" class="btn dropdown-toggle">Acciones <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li>
+                        	<a href="{{NeuralRutasApp.RutaURLBase}}AdministradorGeneral/Farmacos/ListarFarmacos"><i class="iconfa-remove"></i>&nbsp;Cancelar</a>
+                    	</li>
+                  	</ul>
+             	</div>
+				<h4 class="widgettitle">Datos del Fármaco</h4>
+			</div>
+			<div class="widgetcontent">
+				{% for Dato in Consulta %}
+				<table class="table table-bordered table-invoice">
+					<tr>
+						<td class="width30">Categoría</td>
+						<td class="width70">
+							{{Dato.Descripcion}}
+						</td>
+					</tr>		
+					<tr>
+						<td class="width30">Código</td>
+						<td class="width70">
+							{{Dato.Codigo}}
+						</td>
+					</tr>
+					<tr>
+						<td class="width30">Nombre Comercial</td>
+						<td class="width70">
+							{{Dato.Nombre_Comercial}}
+						</td>
+					</tr>
+					<tr>
+						<td class="width30">Nombre Génerico</td>
+						<td class="width70">
+							{{Dato.Nombre_Generico}}
+						</td>
+					</tr>
+					<tr>
+						<td class="width30">Precio Venta</td>
+						<td class="width70">
+							{{Dato.Precio_Venta}}
+						</td>
+					</tr>
+					<tr>
+						<td class="width30">Unidades</td>
+						<td class="width70">
+							{{Dato.Unidad}}&nbsp;&nbsp;{{Dato.Descripcion_Unidad}}
+						</td>
+					</tr>
+				</table>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="captura-right" class="span3">
+		<h5 class="subtitle">Nota:</h5>
+        <div class="alert alert-success">
+        	<button data-dismiss="alert" class="close" type="button">&times;</button>
+        	<h4>Información</h4>
+        	<p style="margin: 8px 0">Muestra los datos almacenados actualmente en la base de datos.</p>
+        </div>
+    </div>		
+	</div>
+		

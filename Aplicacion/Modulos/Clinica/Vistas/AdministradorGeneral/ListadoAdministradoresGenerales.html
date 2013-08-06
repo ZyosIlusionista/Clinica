@@ -1,0 +1,48 @@
+
+ 				<h4 class="widgettitle">Lista de Administradores Generales</h4>
+                <table id="dyntable" class="table table-bordered table-hover">
+                    <colgroup>
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                        <col class="con0" />
+                        <col class="con1" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="head0">Usuario</th>
+                            <th class="head1">Nombre</th>
+                            <th class="head0">Apellido Paterno(s)</th>
+                            <th class="head1">Apellido Materno</th>
+                            <th class="head1">Estado</th>
+                            <th class="head0 nosort">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for Listado in Listado %}
+                        <tr class="gradeC">
+                            <td>{{Listado.Usuario}}</td>
+                            <td>{{Listado.Nombre_Primero}}</td>
+                            <td>{{Listado.Apellido_Primero}}</td>
+                            <td>{{Listado.Apellido_Segundo}}</td>
+                            <td>{{Listado.Estado}}</td>
+                            <td class="center">
+                            	<ul class='list-nostyle list-inline tooltipsample'>
+                            		<li>
+                            			<a href='{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/MostrarAdministradorGeneral/{{ Listado.Id|Encriptacion }}' data-placement='top' data-rel='tooltip' data-original-title='Mostrar'><i class='iconfa-eye-open'></i></a>
+                            		</li>
+                            		<li>
+                            			<a href='{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/ModificarAdministradorGeneral/{{ Listado.Id|Encriptacion }}' data-placement='top' data-rel='tooltip' data-original-title='Editar'><i class='iconfa-pencil'></i></a>
+                            		</li>
+                            		<li>
+                            			<a href='{{NeuralRutasApp.RutaURLBase}}Administrador/AdministradorGeneral/EliminarAdministradorGeneral/{{ Listado.Id|Encriptacion }}' data-placement='top' data-rel='tooltip' data-original-title='Eliminar'><i class='iconfa-trash'></i></a>
+                            		</li>
+                            	</ul>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <br />

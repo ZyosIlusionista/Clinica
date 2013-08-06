@@ -1,0 +1,20 @@
+{% extends "AdministradorGeneral/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-group"></span></div>
+    <div class="pagetitle">
+        <h5>Modificar el Usuario</h5>
+        <h1>ADMINISTRADOR GENERALES</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'AdministradorGeneral/ModificarAdministradorGeneral.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'AdministradorGeneral/Parts/JSListado.html' %}
+{% endblock scripts %}
+

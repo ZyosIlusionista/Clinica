@@ -1,0 +1,20 @@
+{% extends "Farmacos/Index.html" %}
+
+{% block Encabezado %}
+<div class="pageheader">
+	<div class="pageicon"><span class="iconfa-pencil"></span></div>
+    <div class="pagetitle">
+        <h5>Modificar</h5>
+        <h1>FARMACO</h1>            
+    </div>
+</div>
+{% endblock Encabezado %}
+
+{% block Contenido %}
+    {% include 'Farmacos/ModificarFarmacos.html' %}
+{% endblock Contenido %}
+
+{% block scripts %}
+	{% include 'Farmacos/Parts/JSListadoFarmacos.html' %}
+{% endblock scripts %}
+

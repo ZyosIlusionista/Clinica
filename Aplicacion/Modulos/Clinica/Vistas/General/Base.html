@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>.:: Medical :: {{TituloAplicacion}} ::.</title>
+
+<!-- Hoja de Estilo -->
+{{Styles|raw}}
+{% block CSS %}
+    {# Anexo de Hojas de Estilo #}
+{% endblock CSS %}
+
+<body>
+
+<!-- Pagina Principal -->
+<div class="mainwrapper">
+    
+    <!-- Encabezado -->
+    <div class="header">
+        
+        <!-- Logotipo -->
+        {% include 'General/Logotipo.html' %}
+
+        <!-- Menu de Encabezado -->
+        <div class="headerinner">
+            <ul class="headmenu">
+     
+                <!-- Encabezado Izquierdo -->
+                <li class="right">
+                    
+                    <!-- Informacion Usuario -->
+                    {% include 'General/DatosUsuario.html' %}
+
+                </li>
+                <!-- #Encabezado Izquierdo -->
+
+            </ul>
+        </div>
+        <!-- #Menu de Encabezado -->
+    </div>
+    <!-- #Encabezado -->
+    
+    {% include 'General/Parts/Menu_Admin.html' %}
+    
+    <!-- Area derecha -->
+    <div class="rightpanel">
+        
+        {% include 'General/BarraNavegacion.html' %}
+        
+        {% include 'General/HeaderContenido.html' %}
+        
+        <!-- Contenido Principal -->
+        <div class="maincontent">
+            <div class="maincontentinner">
+                
+                <!-- Contenido de Sistema -->
+                {% block Contenido %}
+                <div class="row-fluid">
+
+                    <div id="dashboard-left" class="span8">
+                    </div>
+                    
+                    <div id="dashboard-right" class="span4">                                            
+                    </div>
+
+                </div>
+                {% endblock Contenido %}
+                
+                <!-- Pie de Pagina -->        
+                {% include 'General/Footer.html' %}
+                
+            </div>
+        </div>
+        <!-- #Contenido Principal -->
+
+    </div>
+    <!-- #Area derecha -->
+
+</div>
+<!-- #Pagina Principal -->
+
+</body>
+
+<!-- Javascripts -->
+{% include 'General/Javascript.html' %}
+
+</html>
