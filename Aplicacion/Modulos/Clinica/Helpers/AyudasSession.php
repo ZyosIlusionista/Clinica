@@ -23,6 +23,7 @@
 				$Data['Correo'] = self::Decodificar($_SESSION['Correo'], self::APP_ARRAY);
 				$Data['Ciudad'] = self::Decodificar($_SESSION['Ciudad'], self::APP_ARRAY);
 				$Data['Perfil'] = self::Decodificar($_SESSION['Perfil'], self::APP_ARRAY);
+				$Data['Perfil'] = self::Decodificar($_SESSION['Sucursal'], self::APP_ARRAY);
 				return $Data;
 			}
 			else {
@@ -145,6 +146,7 @@
 				NeuralSesiones::AgregarLlave('Correo', self::Codificar($DatosUsuario['Correo'], self::APP_ARRAY));
 				NeuralSesiones::AgregarLlave('Ciudad', self::Codificar($DatosUsuario['Ciudad'], self::APP_ARRAY));
 				NeuralSesiones::AgregarLlave('Perfil', self::Codificar($DatosUsuario['Tipo_Perfil'], self::APP_ARRAY));
+				NeuralSesiones::AgregarLlave('Sucursal', self::Codificar($DatosUsuario['Sucursal'], self::APP_ARRAY));
 			}
 		}
 		
