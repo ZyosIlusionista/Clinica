@@ -11,8 +11,8 @@
 	"CLINICA":
 	{
 		"dbname":	"clinica",
-		"user":		"root",
-		"password":	"",
+		"user":		"clinica",
+		"password":	"1234",
 		"host":		"localhost",
 		"driver":	"pdo_mysql",
 		"charset":	"utf8"
